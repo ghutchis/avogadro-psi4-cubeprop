@@ -1,0 +1,23 @@
+{
+    "analysis": {
+        "type": "stringList",
+        "label": "Analysis",
+        "default": 0,
+        "values": ["ELF", "LOL", "Dual Descriptor"],
+        "order": 0
+    },
+    "basis": {
+        "type": "stringList",
+        "label": "Basis Set",
+        "default": 0,
+        "values": ["cc-pVDZ", "cc-pVTZ", "6-31G*", "def2-SVP", "def2-TZVP"],
+        "order": 1
+    },
+    "method": {
+        "type": "stringList",
+        "label": "Method",
+        "default": 0,
+        "values": ["B3LYP", "HF", "HF-3c", "B97-3c", "MP2", "wB97X-D"],
+        "order": 2
+    }
+}

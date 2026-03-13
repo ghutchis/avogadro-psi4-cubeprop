@@ -1,0 +1,39 @@
+[project]
+name = "avogadro-psi4-cubeprop"
+version = "0.1.0"
+description = "Psi4 cubeprop plugin for Avogadro 2 (ELF, LOL, dual descriptor)"
+authors = [{name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"}]
+license = "BSD-3-Clause"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+avogadro-psi4-cubeprop = "avogadro_psi4_cubeprop:main"
+
+[build-system]
+requires = ["uv_build>=0.10.2,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.avogadro]
+minimum-avogadro-version = "1.103"
+
+[[tool.avogadro.menu-commands]]
+identifier = "cubeprop"
+input-format = "cjson"
+input-cjson = true
+menu = "Extensions"
+submenu = "Psi4"
+item = "Cube Properties..."
+user-options = "src/avogadro_psi4_cubeprop/cubeprop-options.json"
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+avogadro-psi4-cubeprop = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+psi4 = ">=1.10,<2"
